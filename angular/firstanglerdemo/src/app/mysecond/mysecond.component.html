@@ -1,0 +1,51 @@
+<p>my second hello world</p>
+<p>{{x+3}}</p>
+<p>{{display()}}</p>
+<p>mytitle</p>
+
+<p [class]="myc">test class binding</p><!-- class bind-->
+<p [style.color]="clr">my app</p> <!-- style binding-->
+<p title="{{mytitle}}"> hover</p> 
+<!--********ONE WAY BINDING***********-->
+<P>ONE WAY BIND</P>
+<input type="text" value="{{y}}"/> <!--interpolation-->
+<input type="text" [value]="y"/> <!-- property binding for any js  like .value-->
+<input type="text" [attr.value]="y"/> <!-- attribute bind-->
+<!--********TWO WAY BINDING***********-->
+<P>TWO WAY BIND</P>
+<input type="text" [(ngModel)]="z"/> <!--interpolation-->
+<input type="text" [(ngModel)]="z"/> <!-- property binding for any js  like .value-->
+<input type="text" [(ngModel)]="z"/> <!-- attribute bind-->
+<p [class]="z">test class binding</p><!-- changr to a or b to change color-->
+<p>{{z}}</p><!-- type text in inpute to display it in <p>-->
+    <!--******events*********************-->
+<input type="button" value="clickhere" (click)="myfun()" />
+<input type="text" value="keydown" (keydown)="myfun2()" />
+<input type="text" value="keyup" (keyup)="myfun3()" />
+<input type="text" value="clickhere" (change)="myfun4()" />
+<input type="button" value="send event to func 5" (click)="myfun5($event)" /><br>
+<!--  event filter-->
+<input type="text" value="filter" (keyup.shift.y)="myfun3()" />
+<!------------  sa3yed *************************
+<input type="text" value="clickhere" (click) ="{{aa}}"/>
+<input type ="text" value = "click" (click) ="myreset()">
+-->
+<!-- ************* event access element*************************-->
+
+<br/>
+<p>event access element</p>
+<input type="text" #x /> <!-- # -->
+<input type="text" #y />
+<input type="button"  value="get value of x ,y" (click)="myfun7(x,y)"/>
+<hr/>
+<!--**********Directive***************************-->
+<input type="text" [(ngModel)]="a"/> <span>show div if > 10</span>
+<div *ngIf="a>10 else other"  >
+    the div is showen
+ </div>
+
+ <ng-template #other> <!-- ng template to connect it to else-->
+          <div>  otherssssssssssss elseeeeeeeeee </div> 
+ </ng-template>
+ <!--babd-->
+ <input type="text" value="filter" (keyup.shift.y)="myfun8($event)" />
